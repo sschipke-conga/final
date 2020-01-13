@@ -1,17 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TodaysPhoto v-bind:image="this.currentPhoto"></TodaysPhoto>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TodaysPhoto from './components/TodaysPhoto.vue'
+import {getTodaysPhoto} from './util/apiCalls'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    TodaysPhoto
+  },
+  data() {
+    return {
+    currentPhoto: null
+    }
+  },
+  mounted() {
+  console.log('mounted!')
+    getTodaysPhoto()
+    .then(res => this.currentPhoto = res)
+    .catch(err => console.error('Error fetching current photo:', err))
   }
 }
 </script>
