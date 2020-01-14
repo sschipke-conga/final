@@ -1,19 +1,17 @@
 <template>
-  <div class="month-view">
-    <Photo v-for="photo in allPhotos" v-bind:image="photo">
-    </Photo>
+  <div class="photo">
+    <h1>{{ image.title }}</h1>
+    <img v-bind:src="image.hdurl" alt="astronomy">
+    <h2>{{image.date}}</h2>
+    <button>Select</button>
   </div>
 </template>
 
 <script>
-import Photo from './Photo.vue'
 export default {
-  name: 'Month',
+  name: 'Photo',
   props: {
-    allPhotos: Array
-  },
-  components: {
-    Photo
+    image: Object
   },
   methods: {
   tester: async e => {
@@ -26,7 +24,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .month-view {
-  display:flex;
+img {
+  height: 20vh;
+  width: 20vh;
   }
 </style>

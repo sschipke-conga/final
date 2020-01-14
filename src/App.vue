@@ -2,7 +2,7 @@
   <div id="app">
     <NavBar v-bind:monthView="this.monthView" @click="changeMonthView"></NavBar>
     <TodaysPhoto  v-bind:image="this.currentPhoto" v-if="!this.monthView"></TodaysPhoto>
-    <MonthPhotos v-if="this.monthView"></MonthPhotos>
+    <MonthPhotos v-bind:allPhotos="this.allPhotos" v-if="this.monthView"></MonthPhotos>
   </div>
 </template>
 
