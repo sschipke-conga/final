@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <NavBar v-bind:monthView="this.monthView" @click="changeMonthView"></NavBar>
+    <NavBar v-bind:monthView="this.monthView" @changeView="this.changeView"></NavBar>
     <TodaysPhoto  v-bind:image="this.currentPhoto" v-if="!this.monthView"></TodaysPhoto>
-    <MonthPhotos v-bind:allPhotos="this.allPhotos" v-if="this.monthView"></MonthPhotos>
+    <MonthPhotos v-bind:allPhotos="this.allPhotos" @selectCurrentPhoto="selectCurrentPhoto" v-if="this.monthView"></MonthPhotos>
   </div>
 </template>
 
@@ -28,8 +28,18 @@ export default {
     }
   },
   methods: {
-    changeMonthView(value) {
-    this.monthView = value
+    changeView(value) {
+    if(value === 'month') {
+    this.monthView = true
+    }
+    else { 
+    this.currentPhoto = this.allPhotos[this.allPhotos.length -1]
+    this.monthView = false;
+    }
+  },
+  selectCurrentPhoto(event) {
+    this.monthView = false
+    this. currentPhoto=this.allPhotos[event.target.parentNode.dataset.index]
   }
 },
   mounted() {

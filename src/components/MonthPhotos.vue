@@ -1,6 +1,6 @@
 <template>
   <div class="month-view">
-    <Photo v-for="photo in allPhotos" v-bind:image="photo">
+    <Photo v-for="(photo, index) in allPhotos" :data-index="index" v-bind:image="photo" @selectPhoto="selectPhoto">
     </Photo>
   </div>
 </template>
@@ -16,11 +16,10 @@ export default {
     Photo
   },
   methods: {
-  tester: async e => {
-  e.preventDefault()
-    alert(`It worked! name: ${e.target}!`)
+    selectPhoto(photo) {
+    this.$emit('selectCurrentPhoto', photo)
     }
-  } 
+  }
 }
 </script>
 
