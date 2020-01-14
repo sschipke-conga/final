@@ -3,7 +3,7 @@
     <h1>{{ image.title }}</h1>
     <img v-bind:src="image.hdurl" alt="astronomy">
     <h2>{{image.date}}</h2>
-    <button>Select</button>
+    <button :data-index="$attrs.data-index" v-on:click="selectCurrentPhoto">Select</button>
   </div>
 </template>
 
@@ -14,9 +14,8 @@ export default {
     image: Object
   },
   methods: {
-  tester: async e => {
-  e.preventDefault()
-    alert(`It worked! name: ${e.target}!`)
+  selectCurrentPhoto(event) {
+    this.$emit('selectPhoto', event)
     }
   } 
 }
