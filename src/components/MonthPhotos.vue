@@ -16,11 +16,8 @@ export default {
     Photo
   },
   methods: {
-  tester: async e => {
-  e.preventDefault()
-    alert(`It worked! name: ${e.target}!`)
-    }
-  } 
+  
+  }
 }
 </script>
 

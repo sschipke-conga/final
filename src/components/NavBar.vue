@@ -1,7 +1,7 @@
 <template>
   <nav class="nav-bar">
     <div class="nav_buttons">
-      <button class="nav-button today-photo">Todays Photo</button>
+      <button v-on:click="this.changeToToday" class="nav-button today-photo">Todays Photo</button>
       <button v-on:click="this.changeToMonth" class="nav_button month-photos">This Month</button>
     </div>
     <div class="search-by-date">
@@ -19,7 +19,10 @@ export default {
   },
   methods: {
   changeToMonth (event) {
-    this.$emit('click', true)
+    this.$emit('click', 'month')
+    },
+  changeToToday(event) {
+    this.$emit('click', 'today')
     }
   } 
 }
