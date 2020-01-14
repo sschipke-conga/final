@@ -1,15 +1,15 @@
 <template>
-  <div class="hello">
+  <div class="photo">
     <h1>{{ image.title }}</h1>
     <img v-bind:src="image.hdurl" alt="astronomy">
     <h2>{{image.date}}</h2>
-    <p>{{image.explanation}}</p>
+    <button>Select</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Current Photo',
+  name: 'Photo',
   props: {
     image: Object
   },
@@ -25,7 +25,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 img {
-  height: 70vh;
-  width: 100vh;
+  height: 20vh;
+  width: 20vh;
   }
 </style>
