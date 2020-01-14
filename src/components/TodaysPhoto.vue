@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ image.title }}</h1>
-    <img v-bind:src="image.hdurl">
+    <img v-bind:src="image.hdurl" alt="astronomy">
     <h2>{{image.date}}</h2>
     <p>{{image.explanation}}</p>
   </div>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'Testing',
+  name: 'Current Photo',
   props: {
     image: Object
   },
@@ -26,6 +26,6 @@ export default {
 <style scoped>
 img {
   height: 70vh;
-  width: 70vh;
+  width: 100vh;
   }
 </style>
