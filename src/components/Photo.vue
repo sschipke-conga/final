@@ -43,22 +43,4 @@ img {
   margin: 10px 0;
   width: 70%;
   }
-  button {
-  display: inline-block;
-    border: none;
-    border-radius: 5px;
-    padding: 1rem 2rem;
-    margin: 10px;
-    text-decoration: none;
-    background: #878787;
-    color: #FFFFFF;
-    font-family: sans-serif;
-    font-size: 1rem;
-    cursor: pointer;
-    text-align: center;
-    transition: background 250ms ease-in-out, 
-                transform 150ms ease;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
 </style>
