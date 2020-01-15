@@ -9,7 +9,6 @@
 
 # Where should the reviewer start?
 
-TodaysPhoto.vue
 
 # Checklist:
 
@@ -18,3 +17,5 @@ TodaysPhoto.vue
 - [ ] I have updated the project board in regards to this PR
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
+
+## List the relevant tickets
