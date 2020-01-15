@@ -1,6 +1,6 @@
 <template>
   <nav class="nav-bar">
-  <h1> Star Date </h1>
+  <h1> Star Date: {{this.currentDate}} </h1>
     <div class="nav_buttons">
       <button v-on:click="changeToToday" class="nav-button today-photo">Todays Photo</button>
       <button v-on:click="changeToMonth" class="nav_button month-photos">This Month</button>
@@ -11,11 +11,23 @@
 <script>
 export default {
   name: 'NavBar',
+  data() {
+  return { 
+    currentDate: this.getCurrentDate()
+    }
+  },
   props: {
     image: Object,
     monthView: Boolean
   },
   methods: {
+  getCurrentDate() {
+  let date = new Date();
+  let day = String(date.getDate()).padStart(2, "0");
+  let m = String(date.getMonth() + 1).padStart(2, "0");
+  let year = date.getFullYear();
+  return `${m}/${day}/${year}`;
+  },
   changeToMonth (event) {
   console.log(this.props)
     this.$emit('changeView', 'month')
