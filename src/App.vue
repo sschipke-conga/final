@@ -43,24 +43,29 @@ export default {
   }
 },
   mounted() {
-  console.log('mounted!')
-    getTodaysPhoto()
-    .then(res => this.currentPhoto = res)
-    .catch(err => console.error('Error fetching current photo:', err))
     getMonthPhotos()
     .then(res => this.allPhotos = res)
+    .then(res => this.currentPhoto=this.allPhotos.slice(-1)[0])
     .catch(err => console.error('Error fetching all photos:', err))
-
   }
 }
 </script>
 
 <style>
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    background-color: #878787;
+    color: #565656;
+  }
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  padding: 10px;
 }
 </style>
