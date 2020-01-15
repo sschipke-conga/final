@@ -23,6 +23,7 @@ export default {
 .current-photo {
   display: flex;
   height: 100%;
+  padding-top: 10px;
   width: 100vw;
   }
 .div-description {
